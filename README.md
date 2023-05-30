@@ -6,4 +6,3 @@ dynamically analysis the upi data and plot the graph
 4. download above folder 
 5. run "python app.py " in cmd remain one thing you must in project folder in cmd 
 6. enter the local host
-7. 
