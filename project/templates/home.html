@@ -1,0 +1,79 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV File</title>
+    <!-- home.html -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+    h1,h3, p {
+        text-align: center;
+    }
+    
+    form {
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    input[type=file] {
+        margin-bottom: 20px;
+    }
+    
+    button[type=submit] {
+        display: block;
+        margin: 20px auto 0;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button[type=submit]:hover {
+        background-color: #0062cc;
+    }
+</style>
+</head>
+<body>
+
+    <h1>DATA ANALYTICS MINI PROJECT</h1>
+   <h3>UPI Apps transcational analysis</h3>
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('analyze') }}">
+    <div class="form-group">
+        <label for="csv_file">upload a CSV file:</label>
+        <input type="file" name="csv_file" id="csv_file" required>
+    </div>
+    
+    <div class="form-group">
+        <label>Select an analysis function:</label>
+        <button type="submit" name="graph_function" value="desc">Describe Statistics</button>
+        <button type="submit" name="graph_function" value="head">Schema</button>
+        <button type="submit" name="graph_function" value="volume">Volume (Mn) By Customers</button>
+        <button type="submit" name="graph_function" value="scatter_plot">value(cr) by customers</button>
+        <button type="submit" name="graph_function" value="histogram">volume(mn) </button>
+        <button type="submit" name="graph_function" value="value">value(Cr) </button>
+        <button type="submit" name="graph_function" value="line_plot">Top 10 highest volume upi app</button>
+        <button type="submit" name="graph_function" value="phonepay">Volume month by customers in Phone pay</button>
+        <button type="submit" name="graph_function" value="gpay">Volume month by customers in Google pay</button>
+    </div>
+</form>
+
+</body>
+</html>
